@@ -3,11 +3,11 @@ const service = require('../services/position-stack.service')
 
 const controller = {
     oneCall: async (req, res) => {
-        const { lat, long } = req.body.data
+        const { query } = req.body
         try {
-            const response = await service.oneCall(lat, long)
+            const response = await service.oneCall(query)
             let data = {
-                item: response
+                item: response.data
             }
             return res.status(200).json({ data })
         } catch (error) {

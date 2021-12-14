@@ -5,9 +5,7 @@ const handleError = (error) => {
 }
 
 const instance = axios.create({
-    baseURL:process.env.POSITIONSTACK_URL,
-    timeout: 3000,
-    timeoutErrorMessage: 'Request timeout'
+    baseURL:process.env.POSITIONSTACK_URL
 })
 
 instance.interceptors.request.use(
